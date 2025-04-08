@@ -5,6 +5,7 @@ public class CleanObj : MonoBehaviour, IInteractable
 {
     public string promptText = "Press E to clean";
     public UnityEvent onInteract;
+    public GameObject real;
 
     public string GetInteractionText()
     {
@@ -13,6 +14,7 @@ public class CleanObj : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        real.SetActive(true);
         Destroy(this.gameObject);
     }
 }

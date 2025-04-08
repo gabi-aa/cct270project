@@ -3,16 +3,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int numCleaned = 0;
-    public GameObject door;
+    public DoorNext door;
+    public int limit = 20;
+    [SerializeField] private GameObject UIpanel;
+
+    void Start()
+    {
+        UIpanel.SetActive(false);
+    }
 
     public void UpdateScore()
     {
         numCleaned++;
-        if (numCleaned == 4)
+        if (numCleaned == limit)
         {
-            int layer = LayerMask.NameToLayer("Interactable");
-            door.layer = layer;
-            Debug.Log("Door has been unlocked.");
+            door.locked = false;
+            UIpanel.SetActive(true);
         }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 interface IInteractable
 {
     public void Interact();
+    public string GetInteractionText();
 }
 
 public class Clean : MonoBehaviour
@@ -13,23 +14,42 @@ public class Clean : MonoBehaviour
     public Transform interactorSource;
     public float interactRange = 0.5f;
     public int cleanedCount = 0;
+    public InteractionUI UI;
+
     private readonly Collider[] colliders = new Collider[3];
+
     [SerializeField] private LayerMask interactorMask;
     [SerializeField] private int numFound;
     [SerializeField] private GameManager manager;
+
+    private IInteractable interactable;
 
     // Update is called once per frame
     void Update()
     {
         numFound = Physics.OverlapSphereNonAlloc(interactorSource.position, interactRange, colliders, interactorMask);
-        if(numFound > 0 )
+
+        if (numFound > 0)
         {
-            var interactable = colliders[0].GetComponent<IInteractable>();
-            if( interactable != null && Keyboard.current.eKey.wasPressedThisFrame)
+            interactable = colliders[0].GetComponent<IInteractable>();
+
+            if (interactable != null)
             {
-                manager.UpdateScore();
-                interactable.Interact();
+                if (!UI.isDisplayed) { UI.setup(interactable.GetInteractionText()); }
+
+                if (Keyboard.current.eKey.wasPressedThisFrame)
+                {
+                    manager.UpdateScore();
+                    interactable.Interact();
+                    UI.close();
+                }
+
             }
+        }
+        else
+        {
+            if (interactable != null) { interactable = null; }
+            if (UI.isDisplayed) { UI.close(); }
         }
     }
 
