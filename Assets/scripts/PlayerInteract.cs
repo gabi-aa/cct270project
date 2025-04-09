@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -89,5 +90,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             Debug.LogError("DrugVolume reference is missing!");
         }
+    }
+
+    void CheckDoor()
+    {
+        if (InteractionScore <= 30)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+        else { return; }
     }
 }
