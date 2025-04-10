@@ -7,6 +7,7 @@ public class CleanTrash : MonoBehaviour, IInteractable
     public string promptText = "Press E to clean";
     public UnityEvent onInteract;
     public PlaySound sound;
+    public float vol;
 
     public string GetInteractionText()
     {
@@ -15,7 +16,7 @@ public class CleanTrash : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        sound.Play();
+        sound.Play(vol);
         Destroy(this.gameObject);
     }
 }
