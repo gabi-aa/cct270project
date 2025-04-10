@@ -35,7 +35,7 @@ public class Clean : MonoBehaviour
 
             if (interactable != null)
             {
-                if (!UI.isDisplayed) { UI.setup(interactable.GetInteractionText()); Debug.Log("ui setup");  }
+                if (!UI.isDisplayed) { UI.setup(interactable.GetInteractionText()); }
 
                 if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
