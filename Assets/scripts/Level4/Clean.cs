@@ -22,7 +22,7 @@ public class Clean : MonoBehaviour
     [SerializeField] private int numFound;
     [SerializeField] private GameManager manager;
 
-    private IInteractable interactable;
+    [SerializeField] private IInteractable interactable;
 
     // Update is called once per frame
     void Update()
@@ -35,7 +35,7 @@ public class Clean : MonoBehaviour
 
             if (interactable != null)
             {
-                if (!UI.isDisplayed) { UI.setup(interactable.GetInteractionText()); }
+                if (!UI.isDisplayed) { UI.setup(interactable.GetInteractionText()); Debug.Log("ui setup");  }
 
                 if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
