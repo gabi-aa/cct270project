@@ -7,7 +7,7 @@ public class CleanTrash : MonoBehaviour, IInteractable
     public string promptText = "Press E to clean";
     public UnityEvent onInteract;
 
-    public string GetInteractionText()
+        public string GetInteractionText()
     {
         return promptText;
     }
