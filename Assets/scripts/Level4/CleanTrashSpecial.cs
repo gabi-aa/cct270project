@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,6 +8,7 @@ public class CleanTrashSpecial : MonoBehaviour, IInteractable
     public string promptText = "Press E to clean";
     public GameObject next;
     public UnityEvent onInteract;
+    public PlaySound sound;
 
     public string GetInteractionText()
     {
@@ -17,6 +19,7 @@ public class CleanTrashSpecial : MonoBehaviour, IInteractable
     {
         int layer = LayerMask.NameToLayer("Interactable");
         next.layer = layer;
+        sound.Play();
         Destroy(this.gameObject);
     }
 }

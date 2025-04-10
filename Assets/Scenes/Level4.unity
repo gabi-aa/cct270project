@@ -515,13 +515,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 136255526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!1 &178123706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,14 +1558,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 495613430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c0658418b9e0341b2f90e2eb238aea, type: 3}
+  m_Script: {fileID: 11500000, guid: ed87e9a09a96f3049844c7dae4b3798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to shut
+  promptText: '[E] Shut'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
   real: {fileID: 250614301}
+  sound: {fileID: 2038066520}
+  vol: 0
 --- !u!65 &495613433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2382,14 +2385,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 717902946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c0658418b9e0341b2f90e2eb238aea, type: 3}
+  m_Script: {fileID: 11500000, guid: ed87e9a09a96f3049844c7dae4b3798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to move
+  promptText: '[E] Move'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
   real: {fileID: 5820297097240319874}
+  sound: {fileID: 1842753441}
+  vol: 0
 --- !u!1 &763333399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,14 +2810,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 828263437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c0658418b9e0341b2f90e2eb238aea, type: 3}
+  m_Script: {fileID: 11500000, guid: ed87e9a09a96f3049844c7dae4b3798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to move
+  promptText: '[E] Move'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
   real: {fileID: 80893817293181757}
+  sound: {fileID: 2038066520}
+  vol: 0.3
 --- !u!1 &848726212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3255,13 +3262,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 899374400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!1 &906502207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,7 +3501,7 @@ GameObject:
   - component: {fileID: 1003845812}
   - component: {fileID: 1003845815}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Prompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3516,8 +3524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.043, y: 0.177}
-  m_SizeDelta: {x: 1344.0999, y: 193.6207}
+  m_AnchoredPosition: {x: -0.258, y: 0.177}
+  m_SizeDelta: {x: 932.4131, y: 193.6207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003845812
 MonoBehaviour:
@@ -4978,13 +4986,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1235553753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to remove
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1769638148}
 --- !u!1 &1236738363
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,14 +5113,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1236738363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c0658418b9e0341b2f90e2eb238aea, type: 3}
+  m_Script: {fileID: 11500000, guid: ed87e9a09a96f3049844c7dae4b3798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to move
+  promptText: '[E] Move'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
   real: {fileID: 2299578419836962388}
+  sound: {fileID: 2038066520}
+  vol: 0
 --- !u!1 &1304390524
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,14 +5167,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1304390524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c0658418b9e0341b2f90e2eb238aea, type: 3}
+  m_Script: {fileID: 11500000, guid: ed87e9a09a96f3049844c7dae4b3798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to shut
+  promptText: '[E] Shut'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
   real: {fileID: 6768961352951495527}
+  sound: {fileID: 2038066520}
+  vol: 0.8
 --- !u!65 &1304390527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6439,6 +6452,149 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1769638145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1769638147}
+  - component: {fileID: 1769638146}
+  - component: {fileID: 1769638148}
+  m_Layer: 0
+  m_Name: Shing_sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1769638146
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769638145}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7234464cfa89ac14d9a5a75f03ba6e6f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7234464cfa89ac14d9a5a75f03ba6e6f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1769638147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769638145}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 378.84323, y: 208.52805, z: -149.79779}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1769638148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769638145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1265d3e38e121964f98cf19a176a16fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
 --- !u!1001 &1772526710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6550,13 +6706,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1772526712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!1 &1777587259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,13 +6779,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777587259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!65 &1782398199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6758,6 +6916,149 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800631649}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1842753438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1842753440}
+  - component: {fileID: 1842753439}
+  - component: {fileID: 1842753441}
+  m_Layer: 0
+  m_Name: Rustle_sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1842753439
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842753438}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fa0fd1613192e754ea5a659cb12e5dac, type: 3}
+  m_Resource: {fileID: 8300000, guid: fa0fd1613192e754ea5a659cb12e5dac, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1842753440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842753438}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 378.84323, y: 208.52805, z: -149.79779}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1842753441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842753438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1265d3e38e121964f98cf19a176a16fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
 --- !u!1 &1861979171
 GameObject:
   m_ObjectHideFlags: 0
@@ -7480,14 +7781,159 @@ MonoBehaviour:
   m_GameObject: {fileID: 2035951611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c0658418b9e0341b2f90e2eb238aea, type: 3}
+  m_Script: {fileID: 11500000, guid: ed87e9a09a96f3049844c7dae4b3798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to move
+  promptText: '[E] Move'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
   real: {fileID: 189606965016520241}
+  sound: {fileID: 2038066520}
+  vol: 0.3
+--- !u!1 &2038066517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038066519}
+  - component: {fileID: 2038066518}
+  - component: {fileID: 2038066520}
+  m_Layer: 0
+  m_Name: Thunk_sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2038066518
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038066517}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c65c3d8bcf7948840a99635ae489814f, type: 3}
+  m_Resource: {fileID: 8300000, guid: c65c3d8bcf7948840a99635ae489814f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2038066519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038066517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 378.84323, y: 208.52805, z: -149.79779}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2038066520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038066517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1265d3e38e121964f98cf19a176a16fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 0}
 --- !u!1 &2067898624
 GameObject:
   m_ObjectHideFlags: 0
@@ -7639,14 +8085,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2075635531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c0658418b9e0341b2f90e2eb238aea, type: 3}
+  m_Script: {fileID: 11500000, guid: ed87e9a09a96f3049844c7dae4b3798f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to move
+  promptText: '[E] Move'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
   real: {fileID: 8973476884898751094}
+  sound: {fileID: 2038066520}
+  vol: 0.4
 --- !u!65 &2075635534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8881,11 +9329,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc91ffa6d477dad498719e099bb6c256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   next: {fileID: 1304390524}
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!1 &919132149435937001
 GameObject:
   m_ObjectHideFlags: 0
@@ -10509,13 +10958,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2940453975219551058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!1 &3014454396733095682
 GameObject:
   m_ObjectHideFlags: 0
@@ -11201,13 +11651,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132148859076846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!33 &3469287837209880054
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11246,13 +11697,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132149435937001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!33 &3469287837588494106
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11270,13 +11722,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132149149647365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1769638148}
 --- !u!33 &3469287837797957397
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11315,13 +11768,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132147866462730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!33 &3469287837845475872
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11360,13 +11814,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132147793758015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!33 &3469287838385680834
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11384,13 +11839,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132148318921949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383df742f2daffc4e80673041a716964, type: 3}
+  m_Script: {fileID: 11500000, guid: 5af0bdbf5c41ece40b28429b47fc6e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Press E to clean
+  promptText: '[E] Clean'
   onInteract:
     m_PersistentCalls:
       m_Calls: []
+  sound: {fileID: 1842753441}
 --- !u!23 &3605103656613236078
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15233,3 +15689,6 @@ SceneRoots:
   - {fileID: 1213947184}
   - {fileID: 1111557410}
   - {fileID: 1625312048}
+  - {fileID: 1769638147}
+  - {fileID: 1842753440}
+  - {fileID: 2038066519}
