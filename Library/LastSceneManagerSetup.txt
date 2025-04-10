@@ -1,5 +1,13 @@
 sceneSetups:
+<<<<<<< HEAD
+<<<<<<< Updated upstream
 - path: Assets/Scenes/MainMenu.unity
+=======
+- path: Assets/Scenes/Level1.unity
+>>>>>>> Stashed changes
+=======
+- path: Assets/Scenes/MainMenu.unity
+>>>>>>> 93a110d4 (modified main menu)
   isLoaded: 1
   isActive: 1
   isSubScene: 0
