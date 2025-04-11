@@ -10,7 +10,7 @@ public class Ambience : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         source.volume = 0f;
-        StartCoroutine(Fade(true, source, 2f, 0.1f));
+        StartCoroutine(Fade(true, source, 2f, 0.6f));
         StartCoroutine(waiter());
         StartCoroutine(Fade(false, source, 2f, 0f));
     }
