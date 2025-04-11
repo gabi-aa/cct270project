@@ -5,20 +5,20 @@ namespace Unity.FPS.Gameplay
 {
     public class PlayerInputHandler : MonoBehaviour
     {
-        [Tooltip("Sensitivity multiplier for moving the camera around")]
-        public float LookSensitivity = 1f;
+        //[Tooltip("Sensitivity multiplier for moving the camera around")]
+        //public float LookSensitivity = 1f;
 
-        [Tooltip("Additional sensitivity multiplier for WebGL")]
-        public float WebglLookSensitivityMultiplier = 0.25f;
+        //[Tooltip("Additional sensitivity multiplier for WebGL")]
+        //public float WebglLookSensitivityMultiplier = 0.25f;
 
         [Tooltip("Limit to consider an input when using a trigger on a controller")]
         public float TriggerAxisThreshold = 0.4f;
 
-        [Tooltip("Used to flip the vertical input axis")]
-        public bool InvertYAxis = false;
+        //[Tooltip("Used to flip the vertical input axis")]
+        //public bool InvertYAxis = false;
 
-        [Tooltip("Used to flip the horizontal input axis")]
-        public bool InvertXAxis = false;
+        //[Tooltip("Used to flip the horizontal input axis")]
+       // public bool InvertXAxis = false;
 
         GameFlowManager m_GameFlowManager;
         PlayerCharacterController m_PlayerCharacterController;
@@ -27,10 +27,10 @@ namespace Unity.FPS.Gameplay
         void Start()
         {
             m_PlayerCharacterController = GetComponent<PlayerCharacterController>();
-            DebugUtility.HandleErrorIfNullGetComponent<PlayerCharacterController, PlayerInputHandler>(
-                m_PlayerCharacterController, this, gameObject);
+            //DebugUtility.HandleErrorIfNullGetComponent<PlayerCharacterController, PlayerInputHandler>(
+               // m_PlayerCharacterController, this, gameObject);
             m_GameFlowManager = FindFirstObjectByType<GameFlowManager>();
-            DebugUtility.HandleErrorIfNullFindObject<GameFlowManager, PlayerInputHandler>(m_GameFlowManager, this);
+            //DebugUtility.HandleErrorIfNullFindObject<GameFlowManager, PlayerInputHandler>(m_GameFlowManager, this);
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -46,7 +46,7 @@ namespace Unity.FPS.Gameplay
             return Cursor.lockState == CursorLockMode.Locked && !m_GameFlowManager.GameIsEnding;
         }
 
-        public Vector3 GetMoveInput()
+        /*public Vector3 GetMoveInput()
         {
             if (CanProcessInput())
             {
@@ -60,9 +60,9 @@ namespace Unity.FPS.Gameplay
             }
 
             return Vector3.zero;
-        }
+        }*/
 
-        public float GetLookInputsHorizontal()
+        /*public float GetLookInputsHorizontal()
         {
             return GetMouseOrStickLookAxis(GameConstants.k_MouseAxisNameHorizontal,
                 GameConstants.k_AxisNameJoystickLookHorizontal);
@@ -72,27 +72,7 @@ namespace Unity.FPS.Gameplay
         {
             return GetMouseOrStickLookAxis(GameConstants.k_MouseAxisNameVertical,
                 GameConstants.k_AxisNameJoystickLookVertical);
-        }
-
-        public bool GetJumpInputDown()
-        {
-            if (CanProcessInput())
-            {
-                return Input.GetButtonDown(GameConstants.k_ButtonNameJump);
-            }
-
-            return false;
-        }
-
-        public bool GetJumpInputHeld()
-        {
-            if (CanProcessInput())
-            {
-                return Input.GetButton(GameConstants.k_ButtonNameJump);
-            }
-
-            return false;
-        }
+        }*/
 
         public bool GetFireInputDown()
         {
@@ -136,7 +116,7 @@ namespace Unity.FPS.Gameplay
             return false;
         }
 
-        public bool GetSprintInputHeld()
+        /*public bool GetSprintInputHeld()
         {
             if (CanProcessInput())
             {
@@ -164,7 +144,7 @@ namespace Unity.FPS.Gameplay
             }
 
             return false;
-        }
+        }*/
 
         public bool GetReloadButtonDown()
         {
@@ -176,7 +156,7 @@ namespace Unity.FPS.Gameplay
             return false;
         }
 
-        public int GetSwitchWeaponInput()
+        /*public int GetSwitchWeaponInput()
         {
             if (CanProcessInput())
             {
@@ -262,6 +242,6 @@ namespace Unity.FPS.Gameplay
             }
 
             return 0f;
-        }
+        }*/
     }
 }

@@ -80,7 +80,7 @@ namespace Unity.FPS.Gameplay
         public UnityAction<WeaponController, int> OnAddedWeapon;
         public UnityAction<WeaponController, int> OnRemovedWeapon;
 
-        WeaponController[] m_WeaponSlots = new WeaponController[9]; // 9 available weapon slots
+        WeaponController[] m_WeaponSlots = new WeaponController[1]; // 1 available weapon slot
         PlayerInputHandler m_InputHandler;
         PlayerCharacterController m_PlayerCharacterController;
         float m_WeaponBobFactor;
@@ -116,7 +116,7 @@ namespace Unity.FPS.Gameplay
                 AddWeapon(weapon);
             }
 
-            SwitchWeapon(true);
+            //SwitchWeapon(true);
         }
 
         void Update()
@@ -153,7 +153,7 @@ namespace Unity.FPS.Gameplay
             }
 
             // weapon switch handling
-            if (!IsAiming &&
+            /*if (!IsAiming &&
                 (activeWeapon == null || !activeWeapon.IsCharging) &&
                 (m_WeaponSwitchState == WeaponSwitchState.Up || m_WeaponSwitchState == WeaponSwitchState.Down))
             {
@@ -172,7 +172,7 @@ namespace Unity.FPS.Gameplay
                             SwitchToWeaponIndex(switchWeaponInput - 1);
                     }
                 }
-            }
+            }*/
 
             // Pointing at enemy handling
             IsPointingAtEnemy = false;
@@ -196,7 +196,7 @@ namespace Unity.FPS.Gameplay
             UpdateWeaponAiming();
             UpdateWeaponBob();
             UpdateWeaponRecoil();
-            UpdateWeaponSwitching();
+            //UpdateWeaponSwitching();
 
             // Set final weapon socket position based on all the combined animation influences
             WeaponParentSocket.localPosition =
@@ -211,7 +211,7 @@ namespace Unity.FPS.Gameplay
         }
 
         // Iterate on all weapon slots to find the next valid weapon to switch to
-        public void SwitchWeapon(bool ascendingOrder)
+        /*public void SwitchWeapon(bool ascendingOrder)
         {
             int newWeaponIndex = -1;
             int closestSlotDistance = m_WeaponSlots.Length;
@@ -233,7 +233,7 @@ namespace Unity.FPS.Gameplay
 
             // Handle switching to the new weapon index
             SwitchToWeaponIndex(newWeaponIndex);
-        }
+        }*/
 
         // Switches to the given weapon index in weapon slots if the new index is a valid weapon that is different from our current one
         public void SwitchToWeaponIndex(int newWeaponIndex, bool force = false)
@@ -358,8 +358,89 @@ namespace Unity.FPS.Gameplay
             }
         }
 
+        // Adds a weapon to our inventory
+        public bool AddWeapon(WeaponController weaponPrefab)
+        {
+            // if we already hold this weapon type (a weapon coming from the same source prefab), don't add the weapon
+            if (HasWeapon(weaponPrefab) != null)
+            {
+                return false;
+            }
+
+            // search our weapon slots for the first free one, assign the weapon to it, and return true if we found one. Return false otherwise
+            for (int i = 0; i < m_WeaponSlots.Length; i++)
+            {
+                // only add the weapon if the slot is free
+                if (m_WeaponSlots[i] == null)
+                {
+                    // spawn the weapon prefab as child of the weapon socket
+                    WeaponController weaponInstance = Instantiate(weaponPrefab, WeaponParentSocket);
+                    weaponInstance.transform.localPosition = Vector3.zero;
+                    weaponInstance.transform.localRotation = Quaternion.identity;
+
+                    // Set owner to this gameObject so the weapon can alter projectile/damage logic accordingly
+                    weaponInstance.Owner = gameObject;
+                    weaponInstance.SourcePrefab = weaponPrefab.gameObject;
+                    weaponInstance.ShowWeapon(false);
+
+                    // Assign the first person layer to the weapon
+                    int layerIndex =
+                        Mathf.RoundToInt(Mathf.Log(FpsWeaponLayer.value,
+                            2)); // This function converts a layermask to a layer index
+                    foreach (Transform t in weaponInstance.gameObject.GetComponentsInChildren<Transform>(true))
+                    {
+                        t.gameObject.layer = layerIndex;
+                    }
+
+                    m_WeaponSlots[i] = weaponInstance;
+
+                    if (OnAddedWeapon != null)
+                    {
+                        OnAddedWeapon.Invoke(weaponInstance, i);
+                    }
+
+                    return true;
+                }
+            }
+
+            // Handle auto-switching to weapon if no weapons currently
+            /*if (GetActiveWeapon() == null)
+            {
+                SwitchWeapon(true);
+            }*/
+
+            return false;
+        }
+
+        public WeaponController GetActiveWeapon()
+        {
+            return GetWeaponAtSlotIndex(ActiveWeaponIndex);
+        }
+
+        public WeaponController GetWeaponAtSlotIndex(int index)
+        {
+            // find the active weapon in our weapon slots based on our active weapon index
+            if (index >= 0 &&
+                index < m_WeaponSlots.Length)
+            {
+                return m_WeaponSlots[index];
+            }
+
+            // if we didn't find a valid active weapon in our weapon slots, return null
+            return null;
+        }
+
+        void OnWeaponSwitched(WeaponController newWeapon)
+        {
+            if (newWeapon != null)
+            {
+                newWeapon.ShowWeapon(true);
+            }
+        }
+
         // Updates the animated transition of switching weapons
-        void UpdateWeaponSwitching()
+        //UNEEDED
+        /*void UpdateWeaponSwitching()
         {
             // Calculate the time ratio (0 to 1) since weapon switch was triggered
             float switchingTimeFactor = 0f;
@@ -422,63 +503,9 @@ namespace Unity.FPS.Gameplay
                 m_WeaponMainLocalPosition = Vector3.Lerp(DownWeaponPosition.localPosition,
                     DefaultWeaponPosition.localPosition, switchingTimeFactor);
             }
-        }
+        }*/
 
-        // Adds a weapon to our inventory
-        public bool AddWeapon(WeaponController weaponPrefab)
-        {
-            // if we already hold this weapon type (a weapon coming from the same source prefab), don't add the weapon
-            if (HasWeapon(weaponPrefab) != null)
-            {
-                return false;
-            }
-
-            // search our weapon slots for the first free one, assign the weapon to it, and return true if we found one. Return false otherwise
-            for (int i = 0; i < m_WeaponSlots.Length; i++)
-            {
-                // only add the weapon if the slot is free
-                if (m_WeaponSlots[i] == null)
-                {
-                    // spawn the weapon prefab as child of the weapon socket
-                    WeaponController weaponInstance = Instantiate(weaponPrefab, WeaponParentSocket);
-                    weaponInstance.transform.localPosition = Vector3.zero;
-                    weaponInstance.transform.localRotation = Quaternion.identity;
-
-                    // Set owner to this gameObject so the weapon can alter projectile/damage logic accordingly
-                    weaponInstance.Owner = gameObject;
-                    weaponInstance.SourcePrefab = weaponPrefab.gameObject;
-                    weaponInstance.ShowWeapon(false);
-
-                    // Assign the first person layer to the weapon
-                    int layerIndex =
-                        Mathf.RoundToInt(Mathf.Log(FpsWeaponLayer.value,
-                            2)); // This function converts a layermask to a layer index
-                    foreach (Transform t in weaponInstance.gameObject.GetComponentsInChildren<Transform>(true))
-                    {
-                        t.gameObject.layer = layerIndex;
-                    }
-
-                    m_WeaponSlots[i] = weaponInstance;
-
-                    if (OnAddedWeapon != null)
-                    {
-                        OnAddedWeapon.Invoke(weaponInstance, i);
-                    }
-
-                    return true;
-                }
-            }
-
-            // Handle auto-switching to weapon if no weapons currently
-            if (GetActiveWeapon() == null)
-            {
-                SwitchWeapon(true);
-            }
-
-            return false;
-        }
-
-        public bool RemoveWeapon(WeaponController weaponInstance)
+        /*public bool RemoveWeapon(WeaponController weaponInstance)
         {
             // Look through our slots for that weapon
             for (int i = 0; i < m_WeaponSlots.Length; i++)
@@ -506,29 +533,11 @@ namespace Unity.FPS.Gameplay
             }
 
             return false;
-        }
-
-        public WeaponController GetActiveWeapon()
-        {
-            return GetWeaponAtSlotIndex(ActiveWeaponIndex);
-        }
-
-        public WeaponController GetWeaponAtSlotIndex(int index)
-        {
-            // find the active weapon in our weapon slots based on our active weapon index
-            if (index >= 0 &&
-                index < m_WeaponSlots.Length)
-            {
-                return m_WeaponSlots[index];
-            }
-
-            // if we didn't find a valid active weapon in our weapon slots, return null
-            return null;
-        }
+        }*/
 
         // Calculates the "distance" between two weapon slot indexes
         // For example: if we had 5 weapon slots, the distance between slots #2 and #4 would be 2 in ascending order, and 3 in descending order
-        int GetDistanceBetweenWeaponSlots(int fromSlotIndex, int toSlotIndex, bool ascendingOrder)
+        /*int GetDistanceBetweenWeaponSlots(int fromSlotIndex, int toSlotIndex, bool ascendingOrder)
         {
             int distanceBetweenSlots = 0;
 
@@ -547,14 +556,6 @@ namespace Unity.FPS.Gameplay
             }
 
             return distanceBetweenSlots;
-        }
-
-        void OnWeaponSwitched(WeaponController newWeapon)
-        {
-            if (newWeapon != null)
-            {
-                newWeapon.ShowWeapon(true);
-            }
-        }
+        }*/
     }
 }

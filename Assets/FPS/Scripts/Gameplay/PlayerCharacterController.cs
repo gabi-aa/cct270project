@@ -206,14 +206,14 @@ namespace Unity.FPS.Gameplay
             }
 
             // crouching
-            if (m_InputHandler.GetCrouchInputDown())
+            /*if (m_InputHandler.GetCrouchInputDown())
             {
                 SetCrouchingState(!IsCrouching, false);
-            }
+            }*/
 
             UpdateCharacterHeight(false);
 
-            HandleCharacterMovement();
+            //HandleCharacterMovement();
         }
 
         void OnDie()
@@ -264,7 +264,7 @@ namespace Unity.FPS.Gameplay
             }
         }
 
-        void HandleCharacterMovement()
+        /*void HandleCharacterMovement()
         {
             // horizontal character rotation
             {
@@ -384,7 +384,7 @@ namespace Unity.FPS.Gameplay
 
                 CharacterVelocity = Vector3.ProjectOnPlane(CharacterVelocity, hit.normal);
             }
-        }
+        }*/
 
         // Returns true if the slope angle represented by the given normal is under the slope angle limit of the character controller
         bool IsNormalUnderSlopeLimit(Vector3 normal)
