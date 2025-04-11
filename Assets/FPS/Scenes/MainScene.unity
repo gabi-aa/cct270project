@@ -10560,7 +10560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Title: 'Eliminate the patroller '
-  Description: Click on the door once you're done
+  Description: Shoot the door once you're done
   IsOptional: 0
   DelayVisible: 4
   MustKillAllEnemies: 0
@@ -15787,7 +15787,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 960, y: 540}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -19280,7 +19280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -55}
+  m_AnchoredPosition: {x: 21.599976, y: -55}
   m_SizeDelta: {x: 215.42, y: 186.36}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8393351236667391247
