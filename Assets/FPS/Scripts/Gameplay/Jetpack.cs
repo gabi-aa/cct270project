@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace Unity.FPS.Gameplay
 {
-    [RequireComponent(typeof(AudioSource))]
+    //[RequireComponent(typeof(AudioSource))]
     public class Jetpack : MonoBehaviour
     {
         [Header("References")] [Tooltip("Audio source for jetpack sfx")]
@@ -68,7 +68,7 @@ namespace Unity.FPS.Gameplay
             AudioSource.loop = true;
         }
 
-        void Update()
+        /*void Update()
         {
             // jetpack can only be used if not grounded and jump has been pressed again once in-air
             if (IsPlayergrounded())
@@ -138,7 +138,7 @@ namespace Unity.FPS.Gameplay
                 if (AudioSource.isPlaying)
                     AudioSource.Stop();
             }
-        }
+        }*/
 
         public bool TryUnlock()
         {

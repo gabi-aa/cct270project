@@ -47,8 +47,8 @@ namespace Unity.FPS.UI
 
             MenuRoot.SetActive(false);
 
-            LookSensitivitySlider.value = m_PlayerInputsHandler.LookSensitivity;
-            LookSensitivitySlider.onValueChanged.AddListener(OnMouseSensitivityChanged);
+            //LookSensitivitySlider.value = m_PlayerInputsHandler.LookSensitivity;
+            //LookSensitivitySlider.onValueChanged.AddListener(OnMouseSensitivityChanged);
 
             ShadowsToggle.isOn = QualitySettings.shadows != ShadowQuality.Disable;
             ShadowsToggle.onValueChanged.AddListener(OnShadowsChanged);
@@ -126,10 +126,10 @@ namespace Unity.FPS.UI
 
         }
 
-        void OnMouseSensitivityChanged(float newValue)
+        /*void OnMouseSensitivityChanged(float newValue)
         {
             m_PlayerInputsHandler.LookSensitivity = newValue;
-        }
+        }*/
 
         void OnShadowsChanged(bool newValue)
         {

@@ -25,7 +25,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
-    public void Hubfromlvl2()
+    public void PlayFinal()
+    {
+        SceneManager.LoadScene("Level4");
+    }
+
+    public void Hubfromlvl2() //this for level 2
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
