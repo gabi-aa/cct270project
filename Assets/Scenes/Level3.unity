@@ -370,8 +370,8 @@ MonoBehaviour:
   - {fileID: 1050268733}
   - {fileID: 465767385}
   - {fileID: 334767719}
-  vectorPoint: {x: -28.56, y: 0, z: 0}
-  dead: 20
+  vectorPoint: {x: 0, y: 0, z: 0}
+  dead: 6.23
 --- !u!1001 &71770088
 PrefabInstance:
   m_ObjectHideFlags: 0
